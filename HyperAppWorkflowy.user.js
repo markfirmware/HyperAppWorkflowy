@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HyperAppWorkflowy
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  HyperApp applied to WorkFlowy
 // @author       Mark E Kendrat
 // @match        https://workflowy.com/
@@ -259,7 +259,7 @@
                     onchange: (_, e) => [ChangeSearch, e.target.value],
                     title: "search history including starred"
                 }, getSearchHistory(log).map((q) => h("option", {selected: q == query(log), title: q}, text(q)))),
-                improved(focusedName(log)) != focusedName(log) && h("span", {}, text('"' + improved(focusedName(log)) + '" will replace "' + focusedName(log) + '"')),
+                improved(focusedName(log)) != focusedName(log) && h("span", {}, text("dates will be reformatted and/or trailing spaces removed")),
                 h("div", { hidden: !showLog(log) || log.length == 0 }, [
                     h("button", { ...font, onclick: ResetLog, title: "reset event log" }, text("reset")),
                     h("div", { style: { "overflow-y": "auto" } },
