@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         HyperFlowy
+// @name         HyperAppWorkflowy
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  HyperApp applied to WorkFlowy
 // @author       Mark E Kendrat
 // @match        https://workflowy.com/
@@ -11,6 +11,19 @@
 // ==/UserScript==
 
 (async () => {
+    const starting_state = { log: [] }
+    window.WFEventListener = (event) => {
+        if (event == 'documentReady') {
+            const style = document.createElement('style')
+            style.appendChild(document.createTextNode('')) // for webkit
+            document.head.appendChild(style)
+            style.sheet.addRule('.contentTag', 'padding: 0px 1px !important')
+            style.sheet.addRule('.children', 'padding-left: 23px !important')
+            addStarredQueries(starting_state)
+            recordAction(starting_state, "StartApp")
+            startApp(starting_state)
+        }
+    }
     const { h, text, app } = await import("https://unpkg.com/hyperapp")
     const WF = window.WF
     const locationChanged = "locationChanged"
@@ -155,13 +168,15 @@
         while (i < log.length) {
             if (i + 1 < log.length &&
                 log[i + 0].event == searchTyped &&
-                log[i + 1].event == locationChanged) {
+                log[i + 1].event == locationChanged &&
+                log[i + 1].query !== undefined) {
                 log2.push(log[i + 1])
                 var q = log[i + 1].query
                 i += 2
                 while (i + 1 < log.length &&
                        log[i + 0].event == searchTyped &&
                        log[i + 1].event == locationChanged &&
+                       log[i + 1].query !== undefined &&
                        q.startsWith(log[i + 1].query)) {
                     q = log[i + 1].query
                     i += 2
@@ -254,17 +269,4 @@
             subscriptions: (s) => [onWorkflowyEvent(WfEventReceived), onMessageRemoved(MessageRemoved)],
         })
     }
-    const starting_state = { log: [] }
-    window.WFEventListener = (event) => {
-        if (event == 'documentReady') {
-            const style = document.createElement('style')
-            style.appendChild(document.createTextNode('')) // for webkit
-            document.head.appendChild(style)
-            style.sheet.addRule('.contentTag', 'padding: 0px 1px !important')
-            style.sheet.addRule('.children', 'padding-left: 23px !important')
-            addStarredQueries(starting_state)
-            recordAction(starting_state, "StartApp")
-            startApp(starting_state)
-        }
-    }
-})()
+    })()
