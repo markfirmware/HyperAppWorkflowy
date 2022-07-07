@@ -1,7 +1,7 @@
 # HyperAppWorkflowy
 [HyperApp](https://github.com/jorgebucaran/hyperapp) applied to [Workflowy](https://workflowy.com/features/)
 
-Currently developed and tested in Chromium/Linux
+Currently developed and tested in Chromium/Linux and Vivaldi/Linux
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/)
 2. Install this script via this link: [HyperAppWorkflowy.user.js](https://github.com/markfirmware/HyperAppWorkflowy/raw/master/HyperAppWorkflowy.user.js)
