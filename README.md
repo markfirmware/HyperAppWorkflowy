@@ -1,5 +1,5 @@
 # HyperAppWorkflowy
-[HyperApp](https://github.com/jorgebucaran/hyperapp) applied to [Workflowy](https://workflowy.com/features/)
+[HyperApp](https://github.com/jorgebucaran/hyperapp#readme) applied to [Workflowy](https://workflowy.com/features/)
 
 Currently developed and tested in Chromium/Linux and Vivaldi/Linux
 
