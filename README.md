@@ -8,5 +8,5 @@ Currently developed and tested in Chromium/Linux
 
 Single digit dates are reformatted with a leading 0.
 
-![date before](/pictures/2022-07-07 10.38.05 beta.workflowy.com 9f78dfb79b5d.png)
-![date after](/pictures/2022-07-07 10.39.05 beta.workflowy.com 328e0b596863.png)
+![date before](/pictures/2022-07-07%2010.38.05%20beta.workflowy.com%209f78dfb79b5d.png)
+![date after](/pictures/2022-07-07%2010.39.05%20beta.workflowy.com%20328e0b596863.png)
