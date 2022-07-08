@@ -32,7 +32,7 @@
         const observer = new MutationObserver(function(mutations_list) {
             mutations_list.forEach(function(mutation) {
                 mutation.removedNodes.forEach(function(removed_node) {
-                    if(removed_node.className == ' _171q9nk') {
+                    if(removed_node.className == ' _12609mz') {
                         dispatch(action)
                     }
                 })
