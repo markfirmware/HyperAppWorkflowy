@@ -77,7 +77,7 @@
                 if (was_editing_item) {
                     lostFocus(s, was_editing_item)
                 } else {
-                    console.log("editing " + was_editing_id + "not found")
+                    console.log("editing " + was_editing_id + " not found")
                 }
             }
         } catch (e) {
