@@ -1,4 +1,6 @@
 # HyperAppWorkflowy
+([WorkflowyLens](https://github.com/markfirmware/WorkflowyLens#readme) has a reduced scope of just visualizing workflowy content and activity.)
+
 [HyperApp](https://github.com/jorgebucaran/hyperapp#readme) applied to [Workflowy](https://workflowy.com/features/)
 
 Currently developed and tested in Chromium/Linux and Vivaldi/Linux
