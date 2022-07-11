@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HyperAppWorkflowy
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  HyperApp applied to WorkFlowy
 // @author       Mark E Kendrat
 // @match        https://workflowy.com/
@@ -32,7 +32,7 @@
         const observer = new MutationObserver(function(mutations_list) {
             mutations_list.forEach(function(mutation) {
                 mutation.removedNodes.forEach(function(removed_node) {
-                    if(removed_node.className == ' _1qleyp9') {
+                    if(removed_node.className == ' _171q9nk') {
                         dispatch(action)
                     }
                 })
